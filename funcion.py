@@ -22,19 +22,27 @@
 
 # Calcular las vueltas o deuda de  compra del pan
 
-# PANES = 300
-# LECHE = 3300
-# HUEVOS = 350
+PANES = 300
+LECHE = 3300
+HUEVOS = 350
 
-# b = int(input("Ingrese el valor del billete: "))
-# p = int(input("Ingrese la cantidad de panes: "))
-# l = int(input("Ingrese la cantidad de leche: "))
-# h = int(input("Ingrese la cantidad de huevos: "))
+b = int(input("Ingrese el valor del billete: "))
+p = int(input("Ingrese la cantidad de panes: "))
+l = int(input("Ingrese la cantidad de leche: "))
+h = int(input("Ingrese la cantidad de huevos: "))
 
-# def vueltas(b, p, l, h):
-#     total = b - (p * PANES + l * LECHE + h * HUEVOS)
-#     return total
-# print("La cantidad de vueltas o deuda de compra del pan es: $", vueltas(b, p, l, h))
+def vueltas(b, p, l, h):
+    total_vueltas = b - (p * PANES + l * LECHE + h * HUEVOS)
+ 
+    total_deuda = b - (p * PANES + l * LECHE + h * HUEVOS)
+    
+    if total_deuda < 0:
+        print("Usted debe devolver: ", total_deuda, "pesos")
+    else:
+        print("Sus vueltas son: ", total_vueltas, "pesos")
+
+print(vueltas(b, p, l, h))
+
 
 ###############################################################################
 
@@ -194,21 +202,22 @@
 # Dado el centro y el radio de un cırculo, determinar si un punto de R**2
 # pertenece o no al interior del cırculo.
 
-c = float(input("Ingrese el centro del cırculo: "))
-r = float(input("Ingrese el radio del cırculo: "))
+# c = float(input("Ingrese el centro del cırculo: "))
+# r = float(input("Ingrese el radio del cırculo: "))
 
-def circulo(c, r):
-    x = float(input("Ingrese el punto x: "))
-    y = float(input("Ingrese el punto y: "))
+# def circulo(c, r):
+#     x = float(input("Ingrese el punto x: "))
+#     y = float(input("Ingrese el punto y: "))
 
-    if (x - c)**2 + (y - c)**2 <= r**2:
-        return ("El punto esta dentro del cırculo")
-    else:
-        return ("El punto esta fuera del cırculo")
+#     if (x - c)**2 + (y - c)**2 <= r**2:
+#         return ("El punto esta dentro del cırculo")
+#     else:
+#         return ("El punto esta fuera del cırculo")
 
-print(circulo(c, r))
+# print(circulo(c, r))
 
 ###############################################################################
+
 
 
 
