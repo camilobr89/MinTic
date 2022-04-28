@@ -194,19 +194,19 @@
 # Dado el centro y el radio de un cırculo, determinar si un punto de R**2
 # pertenece o no al interior del cırculo.
 
-# c = float(input("Ingrese el centro del cırculo: "))
-# r = float(input("Ingrese el radio del cırculo: "))
+c = float(input("Ingrese el centro del cırculo: "))
+r = float(input("Ingrese el radio del cırculo: "))
 
-# def circulo(c, r):
-#     x = float(input("Ingrese el punto x: "))
-#     y = float(input("Ingrese el punto y: "))
+def circulo(c, r):
+    x = float(input("Ingrese el punto x: "))
+    y = float(input("Ingrese el punto y: "))
 
-#     if (x - c)**2 + (y - c)**2 <= r**2:
-#         return ("El punto esta dentro del cırculo")
-#     else:
-#         return ("El punto esta fuera del cırculo")
+    if (x - c)**2 + (y - c)**2 <= r**2:
+        return ("El punto esta dentro del cırculo")
+    else:
+        return ("El punto esta fuera del cırculo")
 
-# print(circulo(c, r))
+print(circulo(c, r))
 
 ###############################################################################
 

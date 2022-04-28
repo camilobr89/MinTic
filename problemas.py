@@ -9,23 +9,23 @@
 #si c < (a + b)
 
 
-longitud_a = int(input("Introducir longitud a: "))
-longitud_b = int(input("Introducir longitud b: "))
-longitud_c = int(input("Introducir longitud c: "))
+# longitud_a = int(input("Introducir longitud a: "))
+# longitud_b = int(input("Introducir longitud b: "))
+# longitud_c = int(input("Introducir longitud c: "))
 
-print(longitud_a,longitud_b,longitud_c)
+# print(longitud_a,longitud_b,longitud_c)
 
-if longitud_a <(longitud_b + longitud_c):
-  print("es un triangulo")
+# if longitud_a <(longitud_b + longitud_c):
+#   print("es un triangulo")
 
-elif longitud_b <(longitud_a + longitud_c):
-  print("es un triangulo")
+# elif longitud_b <(longitud_a + longitud_c):
+#   print("es un triangulo")
 
-elif longitud_c <(longitud_a + longitud_b):
-  print("es un triangulo")
+# elif longitud_c <(longitud_a + longitud_b):
+#   print("es un triangulo")
 
-else:
-  print("no es un triangulo")
+# else:
+#   print("no es un triangulo")
 
 ###############################################################################
 
