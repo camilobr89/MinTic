@@ -22,26 +22,26 @@
 
 # Calcular las vueltas o deuda de  compra del pan
 
-PANES = 300
-LECHE = 3300
-HUEVOS = 350
+# PANES = 300
+# LECHE = 3300
+# HUEVOS = 350
 
-b = int(input("Ingrese el valor del billete: "))
-p = int(input("Ingrese la cantidad de panes: "))
-l = int(input("Ingrese la cantidad de leche: "))
-h = int(input("Ingrese la cantidad de huevos: "))
+# b = int(input("Ingrese el valor del billete: "))
+# p = int(input("Ingrese la cantidad de panes: "))
+# l = int(input("Ingrese la cantidad de leche: "))
+# h = int(input("Ingrese la cantidad de huevos: "))
 
-def vueltas(b, p, l, h):
-    total_vueltas = b - (p * PANES + l * LECHE + h * HUEVOS)
+# def vueltas(b, p, l, h):
+#     total_vueltas = b - (p * PANES + l * LECHE + h * HUEVOS)
  
-    total_deuda = b - (p * PANES + l * LECHE + h * HUEVOS)
+#     total_deuda = b - (p * PANES + l * LECHE + h * HUEVOS)
     
-    if total_deuda < 0:
-        print("Usted debe devolver: ", total_deuda, "pesos")
-    else:
-        print("Sus vueltas son: ", total_vueltas, "pesos")
+#     if total_deuda < 0:
+#         print("Usted debe devolver: ", total_deuda, "pesos")
+#     else:
+#         print("Sus vueltas son: ", total_vueltas, "pesos")
 
-print(vueltas(b, p, l, h))
+# print(vueltas(b, p, l, h))
 
 
 ###############################################################################
@@ -154,28 +154,28 @@ print(vueltas(b, p, l, h))
 
 # Numeros primops
 
-# def es_primo(numero):
-#     contador = 0
+def es_primo(numero):
+    contador = 0
 
-#     for i in range(1, numero + 1):
-#         if i == 1 or i == numero:
-#             continue
-#         if numero % i == 0:
-#             contador += 1
-#     if contador == 0:
-#         return True
-#     else:
-#         return False
+    for i in range(1, numero + 1):
+        if i == 1 or i == numero:
+            continue
+        if numero % i == 0:
+            contador += 1
+    if contador == 0:
+        return True
+    else:
+        return False
 
-# def run():
-#     numero = int(input("Ingrese un numero: "))
-#     if es_primo(numero):
-#         print("Es primo")
-#     else:
-#         print("No es primo")
+def run():
+    numero = int(input("Ingrese un numero: "))
+    if es_primo(numero):
+        print("Es primo")
+    else:
+        print("No es primo")
 
-# if __name__ == "__main__":
-#     run()
+if __name__ == "__main__":
+    run()
 
 
 ###############################################################################
