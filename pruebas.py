@@ -5,6 +5,8 @@ def deuda(b, p, l, h):
 
     return b - (p * PANES + l * LECHE + h * HUEVOS)
 
+    
+
 def run():
     b = int(input("Ingrese el valor del billete: "+ "$"))
     p = int(input("Ingrese la cantidad de panes: "))
@@ -15,6 +17,8 @@ def run():
         print("Usted debe devolver $%d pesos" % abs(deuda(b, p, l, h)))
     else:
         print("Sus vueltas son: $%d pesos" % deuda(b, p, l, h))
+
+
 
 if __name__ == "__main__":
     run()
