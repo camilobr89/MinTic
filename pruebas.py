@@ -39,29 +39,24 @@
 ###############################################################################
 
 
-def facturacion(precio, cantidad, porcentaje):
-    subTotal = precio * cantidad
-    iva = subTotal * porcentaje
-    total = subTotal + iva
-    return total
-
-
-def run():
+def facturacion():
     subTotal = 0
     i = 0
+    nombre = []
     productos = int(input("Cuantos productos va a facturar: "))
 
     while i < productos:
-        nombre = input("Nombre del articulo: ")
+        
+        nombre.append(input("Nombre del articulo: "))
         precio = float(input("Precio del articulo sin IVA: "))
         cantidad = int(input("Cantidad: "))
         porcentaje = float(input("Porcentaje del IVA: "))
         subtotal = precio * cantidad
         subTotal += subtotal
-        iva = subTotal * porcentaje
+        iva = subTotal * (porcentaje / 100)
         total = subTotal + iva
         i += 1
-        print("El articulo actual es: %s" %nombre)
+        print("Los articulo en la lista actual son: %s" %nombre)
         print("Subtotal: $%d" %subTotal)
         print("Total con IVA: $%d" %total)
         print("IVA: $%d" %iva, end="\n\n")
@@ -83,7 +78,7 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    facturacion()
    
 
  
