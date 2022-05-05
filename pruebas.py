@@ -1,84 +1,61 @@
-# Se le solicita elaborar de manera individual un programa en python que: 
-# 1- Cuantos productos va a facturar 2- Debe mandar ese elemento a una función donde va a solicitar: - Nombre del articulo - Precio del articulo sin IVA - Cantidad - Porcentaje del IVA 3- Calcula por cada articulo - El subtotal sin Iva - El valor del IVA - Total con IVA 4- Adicionalmente debe acumular todos los subtotales, todos los valores del IVA y todos los totales de los productos. 5- El gerente comercial buscando incremen
-# 5- El gerente comercial buscando incrementar las ventas ofrece: - Si el total de la factura supera 5 millones se le da el 10% al subtotal - Si el total de la factura supera 2 millones se le da el 3% al subtotal - Si el total de la factura supera 1 millones se le da el 1% al subtotal - Para otro valor no se da descuento 
+"""
 
+Earth sixty nine.
 
-# subTotal = 0
-# i = 0
+Earth sixty nine, is a video game developed by BII (Business Intelligence Innovation), which includes a modality called Total Simulation, in which users are randomly assigned to one of two teams and they must fight all of the other team until the allotted time is up.
 
-# productos = int(input("Cuantos productos va a facturar: "))
+You are applying to work for BII and in the interview you are asked to develop a characteristic that consists of the following:
 
-# while i < productos:
-    # nombre = input("Nombre del articulo: ")
-    # precio = float(input("Precio del articulo sin IVA: "))
-    # cantidad = int(input("Cantidad: "))
-    # porcentaje = float(input("Porcentaje del IVA: "))
-    # subtotal = precio * cantidad
-        
-#     subTotal += subtotal
-#     iva = subTotal * porcentaje
-#     total = subTotal + iva
-#     i += 1
-#     print("Subtotal: $%d" %subTotal)
-#     print("Total con IVA: $%d" %total)
-#     print("IVA: $%d" %iva, end="\n\n")
+Consider two teams: VIGBIANA and FIOTIA. Only one player from a certain team is matched against any other player from the opposing team. However, all the weapons are misaligned, and the only thing to do is shoot upwards hoping to get lucky to inflict damage on the opponent.
 
-# if total > 5000000:
-#     total -= subTotal * 0.10
-#     print("El total de la factura con un descuento del 10 porciento es: $%d" %total)
-# elif total > 2000000:
-#     total -= subTotal * 0.03
-#     print("El total de la factura con un descuento del 3 porciento es: $%d" %total)
-# elif total > 1000000:
-#     total -= subTotal * 0.01
-#     print("El total de la factura con un descuento del 1 porciento es: $%d" %total)
-# else:
-#     total = total
-#     print("El total de la factura es: $%d" %total)
+Each type of weapon will be represented with one of the following symmetrical characters:
 
-###############################################################################
+  .
 
+  -
 
-def facturacion():
-    subTotal = 0
-    i = 0
-    nombre = []
-    productos = int(input("Cuantos productos va a facturar: "))
+  +
 
-    while i < productos:
-        
-        nombre.append(input("Nombre del articulo: "))
-        precio = float(input("Precio del articulo sin IVA: "))
-        cantidad = int(input("Cantidad: "))
-        porcentaje = float(input("Porcentaje del IVA: "))
-        subtotal = precio * cantidad
-        subTotal += subtotal
-        iva = subTotal * (porcentaje / 100)
-        total = subTotal + iva
-        i += 1
-        print("Los articulo en la lista actual son: %s" %nombre)
-        print("Subtotal: $%d" %subTotal)
-        print("Total con IVA: $%d" %total)
-        print("IVA: $%d" %iva, end="\n\n")
-    
-    if total > 5000000:
-        total -= subTotal * 0.10
-        print("El total de la factura con un descuento del 10 porciento es: $%d" %total)
-    elif total > 2000000:
-        total -= subTotal * 0.03
-        print("El total de la factura con un descuento del 3 porciento es: $%d" %total)
-    elif total > 1000000:
-        total -= subTotal * 0.01
-        print("El total de la factura con un descuento del 1 porciento es: $%d" %total)
-    else:
-        total = total
-        print("El total de la factura es: $%d" %total)
-    
-    
+  *
 
+  T
 
-if __name__ == "__main__":
-    facturacion()
-   
+  Y
+
+  |
+
+  W
+
+  X
+
+  M
 
  
+
+Each team chooses its possible weapons with which to attack the rival team. The game clock displays the weapon that is going to have an effect against the other at each moment of the game. If any weapon used by clans hits the exact one represented by the game clock, a point is scored for that team and scoring progress must be reported. To represent the state of the game at all times, the following convention is used: if VIGBIANA is winning, a 'V' will be displayed, if they are tied a '≈' (ASCII 247 in UTF-8), and if they are winning the FIOTIA, an 'F' is shown.
+
+Develop a program that allows you to receive the letters that represent the weapons chosen by each team, that receives the information on the vulnerabilities to the weapons given by the game clock, and that prints the state of the game on the screen at each moment of time.
+
+"""
+
+armas = ['.', '-', '+', '*', 'T', 'Y', '|', 'W', 'X', 'M']
+
+myArmas = iter(armas)
+
+armasv = input("Ingrese las armas del equipo VIGBIANA: ")
+armasf = input("Ingrese las armas del equipo FIOTIA: ")
+vulnev = input("Ingrese las armas vulnerables del equipo VIGBIANA: ")
+vulnef = input("Ingrese las armas vulnerables del equipo FIOTIA: ")
+
+while True:
+    try:
+        print(next(myArmas))
+    except StopIteration:
+        break
+for i in range(len(armasv)):
+    if armasv[i] == armasf[i]:
+        print('=')
+    elif armasv[i] == ".":
+        print('V')
+    else:
+        print('F')
