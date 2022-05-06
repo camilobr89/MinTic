@@ -1,74 +1,96 @@
 """
 
-# Earth sixty nine.
+Considere dos equipos: VIGBIANA y FIOTIA. Solo un jugador de un determinado equipo se enfrenta a cualquier otro jugador del equipo contrario. Sin embargo, todas las armas están desalineadas, y lo único que se puede hacer es disparar hacia arriba con la esperanza de tener suerte para infligir daño al oponente.
 
-# Earth sixty nine, is a video game developed by BII (Business Intelligence Innovation), which includes a modality called Total Simulation, in which users are randomly assigned to one of two teams and they must fight all of the other team until the allotted time is up.
+Cada tipo de arma se representará con uno de los siguientes caracteres simétricos:
 
-# You are applying to work for BII and in the interview you are asked to develop a characteristic that consists of the following:
+.
 
-# Consider two teams: VIGBIANA and FIOTIA. Only one player from a certain team is matched against any other player from the opposing team. However, all the weapons are misaligned, and the only thing to do is shoot upwards hoping to get lucky to inflict damage on the opponent.
+-
 
-# Each type of weapon will be represented with one of the following symmetrical characters:
++
 
-#   .
+*
 
-#   -
+T
 
-#   +
+Y
 
-#   *
+|
 
-#   T
+W
 
-#   Y
+X
 
-#   |
-
-#   W
-
-#   X
-
-#   M
+M
 
  
 
-# Each team chooses its possible weapons with which to attack the rival team. The game clock displays the weapon that is going to have an effect against the other at each moment of the game. If any weapon used by clans hits the exact one represented by the game clock, a point is scored for that team and scoring progress must be reported. To represent the state of the game at all times, the following convention is used: if VIGBIANA is winning, a 'V' will be displayed, if they are tied a '≈' (ASCII 247 in UTF-8), and if they are winning the FIOTIA, an 'F' is shown.
+Cada equipo elige sus posibles armas con las que atacar al equipo rival. El reloj de juego muestra el arma que va a tener efecto contra la otra en cada momento del juego. Si cualquier arma utilizada por los clanes golpea exactamente la representada por el reloj del juego, se anota un punto para ese equipo y se debe informar el progreso de la puntuación. Para representar el estado del juego en cada momento, se utiliza la siguiente convención: si VIGBIANA está ganando, se mostrará una 'V', si están empatadas un '≈' (ASCII 247 en UTF-8), y si están ganando el FIOTIA, se muestra una 'F'.
 
-# Develop a program that allows you to receive the letters that represent the weapons chosen by each team, that receives the information on the vulnerabilities to the weapons given by the game clock, and that prints the state of the game on the screen at each moment of time.
+Desarrolla un programa que te permita recibir las letras que representan las armas elegidas por cada equipo, que reciba la información sobre las vulnerabilidades de las armas dadas por el reloj del juego, y que imprima el estado del juego en pantalla en cada momento de tiempo.
 
-# """
+Ejemplos.
 
-# armas = ['.', '-', '+', '*', 'T', 'Y', '|', 'W', 'X', 'M']
+Entradas
++XMY*|
 
-# myArmas = iter(armas)
++XWY.-
 
-# armasv = input("Ingrese las armas del equipo VIGBIANA: ")
-# armasf = input("Ingrese las armas del equipo FIOTIA: ")
-# vulnev = input("Ingrese las armas vulnerables del equipo VIGBIANA: ")
-# vulnef = input("Ingrese las armas vulnerables del equipo FIOTIA: ")
+WWX.-.+M-M|
 
-# while True:
-#     try:
-#         print(next(myArmas))
-#     except StopIteration:
-#         break
-# for i in range(len(armasv)):
-#     if armasv[i] == armasf[i]:
-#         print('=')
-#     elif armasv[i] == ".":
-#         print('V')
-#     else:
-#         print('F')
+|+..+XM|XM
 
-#############
+Salida
 
-# Desarrollar un programa que imprima el cuadrado del numero que el
-# usuario ingresa mientras que el numero ingresado no sea negativo.
+FFFFFFFFFFFFFFFFFFFFF
 
-numero = int(input("ingrese el numero: "))
-while numero > 0:
-    potencia = numero ** 2
-    print("El cuadrado del numero es: %d" %potencia)
-    break
+"""
+
+
+
+contadorF = 0
+contadorV = 0
+x = ''
+
+reloj = input("Ingrese las armas del reloj: ")
+
+armasF = input("Ingrese las armas del equipo FIOTIA: ")
+armasV = input("Ingrese las armas del equipo VIGBIANA: ")
+
+i = 0
+
+while i < len(reloj):
+    if reloj[i] in armasF:
+        contadorF += 1
+    else:
+        contadorF += 0
+    if reloj[i] in armasV:
+        contadorV += 1
+    else:
+        contadorV += 0
+    i += 1
+    if contadorF == contadorV:
+        x = str("≈")
+    elif contadorF > contadorV:
+        x = str("V")
+    else:
+        x = str("F")
+    
+    print(x, end="")
+
+    
+    
+
+    
+
+
+
+
+
+
+
+
+
 
 
