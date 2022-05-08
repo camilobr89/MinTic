@@ -49,30 +49,56 @@ FFFFFFFFFFFFFFFFFFFFF
 
 
 
-contadorF = 0
-contadorV = 0
-x = ''
-armasF = input("Ingrese las armas del equipo FIOTIA: ")
-armasV = input("Ingrese las armas del equipo VIGBIANA: ")
-reloj = input("Ingrese las armas del reloj: ")
+# contadorF = 0
+# contadorV = 0
+# x = ''
+# reloj = input("Ingrese las armas del reloj: ")
+# armasF = input("Ingrese las armas del equipo FIOTIA: ")
+# armasV = input("Ingrese las armas del equipo VIGBIANA: ")
 
-i = 0
 
-while i < len(reloj):
-    if reloj[i] in armasF:
-        contadorF += 1
-    else:
-        contadorF += 0
-    if reloj[i] in armasV:
-        contadorV += 1
-    else:
-        contadorV += 0
-    i += 1
-    if contadorF == contadorV:
-        x = str("≈")
-    elif contadorF > contadorV:
-        x = str("V")
-    else:
-        x = str("F")
+# i = 0
+
+# while i < len(reloj):
+#     if reloj[i] in armasF:
+#         contadorF += 1
+#     else:
+#         contadorF += 0
+#     if reloj[i] in armasV:
+#         contadorV += 1
+#     else:
+#         contadorV += 0
+#     i += 1
+#     if contadorF == contadorV:
+#         x = str("≈")
+#     elif contadorF > contadorV:
+#         x = str("V")
+#     else:
+#         x = str("F")
     
-    print(x, end="")
+#     print(x, end="")
+
+puntos_fiotia = 0
+puntos_vigbiana = 0
+resultados = ""
+armas_reloj = input("Ingrese las armas del reloj: ")
+armas_fiotia = input("Ingrese las armas del equipo FIOTIA: ")
+armas_vigbiana = input("Ingrese las armas del equipo VIGBIANA: ")
+
+
+for i in range(len(armas_reloj)):
+    if armas_reloj[i] in armas_fiotia:
+        puntos_fiotia = puntos_fiotia + 1
+    else:
+        puntos_fiotia = puntos_fiotia + 0
+    if armas_reloj[i] in armas_vigbiana:
+        puntos_vigbiana = puntos_vigbiana + 1
+    else:
+        puntos_vigbiana = puntos_vigbiana + 0
+    if puntos_fiotia == puntos_vigbiana:
+        resultados = ("≈")
+    elif puntos_fiotia > puntos_vigbiana:
+        resultados = ("V")
+    else:
+        resultados = ("F")
+    print(resultados, end="")
