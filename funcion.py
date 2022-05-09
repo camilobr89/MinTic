@@ -154,28 +154,28 @@
 
 # Numeros primops
 
-def es_primo(numero):
-    contador = 0
+# def es_primo(numero):
+#     contador = 0
 
-    for i in range(1, numero + 1):
-        if i == 1 or i == numero:
-            continue
-        if numero % i == 0:
-            contador += 1
-    if contador == 0:
-        return True
-    else:
-        return False
+#     for i in range(1, numero + 1):
+#         if i == 1 or i == numero:
+#             continue
+#         if numero % i == 0:
+#             contador += 1
+#     if contador == 0:
+#         return True
+#     else:
+#         return False
 
-def run():
-    numero = int(input("Ingrese un numero: "))
-    if es_primo(numero):
-        print("Es primo")
-    else:
-        print("No es primo")
+# def run():
+#     numero = int(input("Ingrese un numero: "))
+#     if es_primo(numero):
+#         print("Es primo")
+#     else:
+#         print("No es primo")
 
-if __name__ == "__main__":
-    run()
+# if __name__ == "__main__":
+#     run()
 
 
 ###############################################################################
@@ -259,50 +259,68 @@ if __name__ == "__main__":
 ###############################################################################
 
 
-def facturacion():
-    subTotal = 0
-    i = 0
-    nombre = []
-    productos = int(input("Cuantos productos va a facturar: "))
+# def facturacion():
+#     subTotal = 0
+#     i = 0
+#     nombre = []
+#     productos = int(input("Cuantos productos va a facturar: "))
 
-    while i < productos:
+#     while i < productos:
         
-        nombre.append(input("Nombre del articulo: "))
-        precio = float(input("Precio del articulo sin IVA: "))
-        cantidad = int(input("Cantidad: "))
-        porcentaje = float(input("Porcentaje del IVA: "))
-        subtotal = precio * cantidad
-        subTotal += subtotal
-        iva = subTotal * (porcentaje / 100)
-        total = subTotal + iva
-        i += 1
-        print("Los articulo en la lista actual son: %s" %nombre)
-        print("Subtotal: $%d" %subTotal)
-        print("Total con IVA: $%d" %total)
-        print("IVA: $%d" %iva, end="\n\n")
+#         nombre.append(input("Nombre del articulo: "))
+#         precio = float(input("Precio del articulo sin IVA: "))
+#         cantidad = int(input("Cantidad: "))
+#         porcentaje = float(input("Porcentaje del IVA: "))
+#         subtotal = precio * cantidad
+#         subTotal += subtotal
+#         iva = subTotal * (porcentaje / 100)
+#         total = subTotal + iva
+#         i += 1
+#         print("Los articulo en la lista actual son: %s" %nombre)
+#         print("Subtotal: $%d" %subTotal)
+#         print("Total con IVA: $%d" %total)
+#         print("IVA: $%d" %iva, end="\n\n")
     
-    if total > 5000000:
-        total -= subTotal * 0.10
-        print("El total de la factura con un descuento del 10 porciento es: $%d" %total)
-    elif total > 2000000:
-        total -= subTotal * 0.03
-        print("El total de la factura con un descuento del 3 porciento es: $%d" %total)
-    elif total > 1000000:
-        total -= subTotal * 0.01
-        print("El total de la factura con un descuento del 1 porciento es: $%d" %total)
-    else:
-        total = total
-        print("El total de la factura es: $%d" %total)
+#     if total > 5000000:
+#         total -= subTotal * 0.10
+#         print("El total de la factura con un descuento del 10 porciento es: $%d" %total)
+#     elif total > 2000000:
+#         total -= subTotal * 0.03
+#         print("El total de la factura con un descuento del 3 porciento es: $%d" %total)
+#     elif total > 1000000:
+#         total -= subTotal * 0.01
+#         print("El total de la factura con un descuento del 1 porciento es: $%d" %total)
+#     else:
+#         total = total
+#         print("El total de la factura es: $%d" %total)
     
     
 
 
-if __name__ == "__main__":
-    facturacion()
+# if __name__ == "__main__":
+#     facturacion()
    
 ###############################################################################
 
 
+# def minmax(a, b):
+#     if a < b:
+#         return a, b
+#     else:
+#         return b, a
+
+# x, y = minmax(5,13)
+
+# print("min =", x, ",", "max = ", y)
+# x, y = minmax(12, -4)
+# print("min =", x, ",", "max =", y)
+
+####################
+
+t = tuple(map(int, input().split()))
+print(t)
+print(t[0])
+print(t[3])
 
 
 
