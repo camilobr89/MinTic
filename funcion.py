@@ -317,10 +317,12 @@
 
 ####################
 
-t = tuple(map(int, input().split()))
-print(t)
-print(t[0])
-print(t[3])
+# t = tuple(map(int, input().split()))
+# print(t)
+# print(t[0])
+# print(t[3])
+
+#############################################################################
 
 
 
