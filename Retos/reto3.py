@@ -30,28 +30,39 @@ E C E B D F C E A C A C E
 
 """
 
-notas = tuple(map(str.upper, input().split(',')))
 
 
-for i in notas:
-    print(i, end=' ')
-print()
-for i in notas:
-    print(notas.count(i), end=' ')
-print()
-
-
-
-
-
-
-
-
-
-
-# for i in range(len(notas)):
-#     print(notas.count(notas[i]), end=" ")
+# from itertools import groupby
+# notas = tuple(map(str.upper, input().split(',')))
+# for i, x in groupby(notas):
+#     print(i, end=" ")
 # print()
+# for i, x in groupby(notas):
+#     print(len(list(x)), end=" ")
+# print()
+
+#######################################################################################################################
+
+# from itertools import groupby
+
+# r=input().split(",")
+# mayuscula=list(map(lambda x:x.upper(),r))
+
+# c= groupby(list(mayuscula))
+# for k,g in groupby(mayuscula):
+#     print(k,end=" ")
+# print()
+# for k,g in c:
+#     print(len(list(g)),end=" ")
+# print()
+
+#######################################################################################################################
+
+
+
+
+
+
 
 
 
