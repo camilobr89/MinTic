@@ -336,7 +336,17 @@
 
 #############################################################################
 
-
+# with open("./files/data.txt", "r") as archivo:
+#     data = archivo.read()
+#     print(data)
+    
+with open("./files/wdata.txt", "w") as archivo:
+    data = ("Estamos escribiendo el archivo 123\n ")
+    archivo.write(data)
+    archivo.write(data)
+    archivo.write(data)
+    
+    
 
 
 
