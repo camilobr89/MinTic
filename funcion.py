@@ -358,3 +358,6 @@ with open("./files/wdata.txt", "w") as archivo:
 
 
 
+
+
+
