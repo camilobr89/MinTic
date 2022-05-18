@@ -340,17 +340,59 @@
 #     data = archivo.read()
 #     print(data)
     
-with open("./files/wdata.txt", "w") as archivo:
-    data = ("Estamos escribiendo el archivo 123\n ")
-    archivo.write(data)
-    archivo.write(data)
-    archivo.write(data)
+# with open("./files/wdata.txt", "w") as archivo:
+#     data = ("Estamos escribiendo el archivo 123\n ")
+#     archivo.write(data)
+#     archivo.write(data)
+#     archivo.write(data)
     
     
+#############################################################################
+#Cerializado:
 
+# import json
+# data = {
+#     "cientifico": {
+#         "nombre": "Alan Mathinson Turing",
+#         "edad": "41"
+#     }
+# }
 
+# with open ("data_file.json", "w") as archivo:
+#     json.dump(data, archivo)
 
+# json_string = json.dumps(data, indent=4)
+# print(json_string, type(json_string))
 
+#############################################################################
+# Conversión de archivos JSON a estructuras de Python
+
+# import json
+# from pprint import pprint
+# strjson = '''{
+#     "boolean1": null,
+#     "diccionario": {"papa": 2000, "arroz": 5000},
+#     "intValue": 0, "myList": [],
+#     "myList2": ["info1", "info2"],
+#     "littleboolean": false, "myEmpyList": null,
+#     "text": null, "text2": "hello", "value1": null,
+#     "value2": null
+# }
+# '''
+# data = json.loads(strjson)
+# pprint(data)
+
+#############################################################################
+# json desde internet
+# import json
+# import requests
+# from pprint import pprint
+# response = requests.get(
+#     "https://jsonplaceholder.typicode.com/todos")
+# pendientes = json.loads(response.text)
+# pprint(pendientes)
+
+#############################################################################
 
 
 
