@@ -324,6 +324,29 @@
 
 #############################################################################
 
+# Ejercicio 1
+# Escribir un programa que guarde en una variable el diccionario {'Euro':'€', 'Dollar':'$', 'Yen':'¥'}, pregunte al usuario por una divisa y muestre su símbolo o un mensaje de aviso si la divisa no está en el diccionario.
+
+
+
+
+# monedas = {'Euro':'€', 'Dollar':'$', 'Yen':'¥'}
+# divisas = input("Ingrese una divisa: ")
+# print(monedas.get(divisas, "No existe la divisa"))
+
+#############################################################################
+
+# with open("./files/data.txt", "r") as archivo:
+#     data = archivo.read()
+#     print(data)
+    
+with open("./files/wdata.txt", "w") as archivo:
+    data = ("Estamos escribiendo el archivo 123\n ")
+    archivo.write(data)
+    archivo.write(data)
+    archivo.write(data)
+    
+    
 
 
 
