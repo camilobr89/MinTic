@@ -14,53 +14,37 @@ por último una tercera función que va asacar la factura con todos los artícul
 
 import json
 
-
-
+articulos = {}
 
 def capturar_articulos():
-    """Se captura los datos del articulo:
-       1. Código del articulo
-       2. Nombre del articulo
-       3. Precio unitario con IVA del articulo
-       4. Porcentaje del IVA
-    """
-    
-    global articulos
-    
-    codigo = json.loads(input('Ingrese el código del artículo: '))
-    nombre = json.loads(input('Ingrese el nombre del artículo: '))
-    precio = json.loads(float(input('Ingrese el precio del artículo con IVA incluido: ')))
-    iva = json.loads(float(input('Ingrese el porcentaje del IVA: ')))
-    articulos[codigo] = {"nombre": nombre, "precio": precio, "iva": iva}
-    
-
+    """Capturar articulos"""
+    codigo = input('Ingrese el codigo del articulo: ')
+    articulos[codigo] = {}
+    articulos[codigo]['nombre'] = input('Ingrese el nombre del articulo: ')
+    articulos[codigo]['precio'] = float(input('Ingrese el precio unitario con IVA: '))
+    articulos[codigo]['iva'] = float(input('Ingrese el porcentaje del IVA: '))
 
 def facturar():
-    """Se pedira nuevamente el codigo del articulo y se mostrara el subtotal sin IVA, el IVA y el total de los artículos que ha decidido capturar 
-    """
-    global articulos
-    codigo = json.loads(input('Ingrese el código del artículo: '))
-    if codigo in articulos:
-        print('Subtotal sin IVA: ', articulos[codigo]['precio'] * articulos[codigo]['iva'])
-        print('IVA: ', articulos[codigo]['precio'] * articulos[codigo]['iva'])
-        print('Total: ', articulos[codigo]['precio'] * articulos[codigo]['iva'] * articulos[codigo]['iva'])
-    else:
-        print('El código no existe')
+    """Facturar"""
+    codigo = input('Ingrese el codigo del articulo: ')
+    articulos[codigo]['cantidad'] = int(input('Ingrese la cantidad: '))
+    if articulos[codigo]['cantidad'] < 0:
+        print('La cantidad no puede ser negativa')
+        return
+    articulos[codigo]['subtotal'] = articulos[codigo]['cantidad'] * articulos[codigo]['precio']
+    articulos[codigo]['iva'] = articulos[codigo]['subtotal'] * articulos[codigo]['iva'] / 100
+    articulos[codigo]['total'] = articulos[codigo]['subtotal'] + articulos[codigo]['iva']
     
+
 def mostrar_factura():
-    """Se mostrara la factura con todos los artículos que he facturado con los subtotales y al finalizar el total del valor sin IVA y el total total con IVA, integrarse desde un menú, capturar artículos, facturar, mostrar factura
-    """
+    """Mostrar factura"""
     print('Factura:')
-    print('Artículos:')
     for articulo in articulos:
-        print(articulo)
-    print('Subtotales:')
-    for articulo in articulos:
-        print(articulo)
-    print('Total:')
-    for articulo in articulos:
-        print(articulo)
-    
+        print('Articulo: ', articulos[articulo]['nombre'])
+        print('Cantidad: ', articulos[articulo]['cantidad'])
+        print('Subtotal: ', articulos[articulo]['subtotal'])
+        print('IVA: ', articulos[articulo]['iva'])
+        print('Total: ', articulos[articulo]['total'])
  
 
 def run():
@@ -76,14 +60,14 @@ def run():
         print('2. Facturar')
         print('3. Mostrar factura')
         print('4. Salir')
-        opcion = json.loads(input('Ingrese una opción: '))
-        if opcion == 1:
+        opcion = input('Ingrese una opción: ')
+        if opcion == "1":
             capturar_articulos()
-        elif opcion == 2:
+        elif opcion == "2":
             facturar()
-        elif opcion == 3:
+        elif opcion == "3":
             print(articulos)
-        elif opcion == 4:
+        elif opcion == "4":
             break
         else:
             print('Opción no valida')
