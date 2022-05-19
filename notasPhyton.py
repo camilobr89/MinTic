@@ -12,6 +12,14 @@ Para eliminar una clave de un diccionario se utiliza (del diccionario[clave]).
 
 Dict sirve para convertir una lista en un diccionario, para usar esta opcion es necesario que la lista este en pares.
 
+json es un estandar para almecenar informacion en diccionarios
+
+tipos de objetos de json:
+object, arrery, string, number, boolean, null
+
+tipos de objetos en python:
+list, tuple, dict, set, str, int, float, bool, None
+
 """
 
 

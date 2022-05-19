@@ -259,46 +259,46 @@
 ###############################################################################
 
 
-def facturacion():
-    subTotal = 0
-    i = 0
-    nombre = []
-    productos = int(input("Cuantos productos va a facturar: "))
+# def facturacion():
+#     subTotal = 0
+#     i = 0
+#     nombre = []
+#     productos = int(input("Cuantos productos va a facturar: "))
 
-    while i < productos:
+#     while i < productos:
         
-        nombre.append(input("Nombre del articulo: "))
-        precio = float(input("Precio del articulo sin IVA: "))
-        cantidad = int(input("Cantidad: "))
-        porcentaje = float(input("Porcentaje del IVA: "))
-        subtotal = precio * cantidad
-        subTotal += subtotal
-        iva = subTotal * (porcentaje / 100)
-        total = subTotal + iva
-        i += 1
-        print("Los articulo en la lista actual son: %s" %nombre)
-        print("Subtotal: $%d" %subTotal)
-        print("Total con IVA: $%d" %total)
-        print("IVA: $%d" %iva, end="\n\n")
+#         nombre.append(input("Nombre del articulo: "))
+#         precio = float(input("Precio del articulo sin IVA: "))
+#         cantidad = int(input("Cantidad: "))
+#         porcentaje = float(input("Porcentaje del IVA: "))
+#         subtotal = precio * cantidad
+#         subTotal += subtotal
+#         iva = subTotal * (porcentaje / 100)
+#         total = subTotal + iva
+#         i += 1
+#         print("Los articulo en la lista actual son: %s" %nombre)
+#         print("Subtotal: $%d" %subTotal)
+#         print("Total con IVA: $%d" %total)
+#         print("IVA: $%d" %iva, end="\n\n")
     
-    if total > 5000000:
-        total -= subTotal * 0.10
-        print("El total de la factura con un descuento del 10 porciento es: $%d" %total)
-    elif total > 2000000:
-        total -= subTotal * 0.03
-        print("El total de la factura con un descuento del 3 porciento es: $%d" %total)
-    elif total > 1000000:
-        total -= subTotal * 0.01
-        print("El total de la factura con un descuento del 1 porciento es: $%d" %total)
-    else:
-        total = total
-        print("El total de la factura es: $%d" %total)
+#     if total > 5000000:
+#         total -= subTotal * 0.10
+#         print("El total de la factura con un descuento del 10 porciento es: $%d" %total)
+#     elif total > 2000000:
+#         total -= subTotal * 0.03
+#         print("El total de la factura con un descuento del 3 porciento es: $%d" %total)
+#     elif total > 1000000:
+#         total -= subTotal * 0.01
+#         print("El total de la factura con un descuento del 1 porciento es: $%d" %total)
+#     else:
+#         total = total
+#         print("El total de la factura es: $%d" %total)
     
     
 
 
-if __name__ == "__main__":
-    facturacion()
+# if __name__ == "__main__":
+#     facturacion()
    
 ###############################################################################
 
@@ -340,59 +340,16 @@ if __name__ == "__main__":
 #     data = archivo.read()
 #     print(data)
     
-# with open("./files/wdata.txt", "w") as archivo:
-#     data = ("Estamos escribiendo el archivo 123\n ")
-#     archivo.write(data)
-#     archivo.write(data)
-#     archivo.write(data)
+with open("./files/wdata.txt", "w") as archivo:
+    data = ("Estamos escribiendo el archivo 123\n ")
+    archivo.write(data)
+    archivo.write(data)
+    archivo.write(data)
     
     
-#############################################################################
-#Cerializado:
 
-# import json
-# data = {
-#     "cientifico": {
-#         "nombre": "Alan Mathinson Turing",
-#         "edad": "41"
-#     }
-# }
 
-# with open ("data_file.json", "w") as archivo:
-#     json.dump(data, archivo)
 
-# json_string = json.dumps(data, indent=4)
-# print(json_string, type(json_string))
-
-#############################################################################
-# Conversión de archivos JSON a estructuras de Python
-
-# import json
-# from pprint import pprint
-# strjson = '''{
-#     "boolean1": null,
-#     "diccionario": {"papa": 2000, "arroz": 5000},
-#     "intValue": 0, "myList": [],
-#     "myList2": ["info1", "info2"],
-#     "littleboolean": false, "myEmpyList": null,
-#     "text": null, "text2": "hello", "value1": null,
-#     "value2": null
-# }
-# '''
-# data = json.loads(strjson)
-# pprint(data)
-
-#############################################################################
-# json desde internet
-# import json
-# import requests
-# from pprint import pprint
-# response = requests.get(
-#     "https://jsonplaceholder.typicode.com/todos")
-# pendientes = json.loads(response.text)
-# pprint(pendientes)
-
-#############################################################################
 
 
 
