@@ -15,24 +15,31 @@ articulos = {}                          # Diccionario de articulos
 
 def capturar_articulos():               # Funcion para capturar los articulos
     """Capturar articulos"""
-    codigo = input('Ingrese el codigo del articulo: ')
-    articulos[codigo] = {}              # Creacion de un diccionario para almacenar los articulos
-    articulos[codigo]['nombre'] = input('Ingrese el nombre del articulo: ')  # Captura del nombre del articulo
-    articulos[codigo]['precio con IVA'] = float(input('Ingrese el precio unitario con IVA: $')) # Captura del precio con IVA
-    articulos[codigo]['iva'] = float(input('Ingrese el porcentaje del IVA: '))   # Captura del porcentaje del IVA
-    print('-----------------------------------------------------')
-    print('\n')    
+    codigo = input('Ingrese el codigo del articulo: ') 
+    if codigo in articulos:   
+        print('-----------------------------------------------------')                         # Si el codigo ya existe en el diccionario, se le suma 1 a la cantidad
+        print('El articulo ya existe')
+        print('-----------------------------------------------------')
+    else:
+        articulos[codigo] = {}              # Creacion de un diccionario para almacenar los articulos
+        articulos[codigo]['nombre'] = input('Ingrese el nombre del articulo: ')  # Captura del nombre del articulo
+        articulos[codigo]['precio con IVA'] = float(input('Ingrese el precio unitario con IVA: $')) # Captura del precio con IVA
+        articulos[codigo]['iva'] = float(input('Ingrese el porcentaje del IVA: '))   # Captura del porcentaje del IVA
+        print('-----------------------------------------------------')
+        print('\n')    
 
 def facturar():                    # Funcion para facturar
     """Facturar"""
-    codigo = input('Ingrese el codigo del articulo: ')  # Captura del codigo del articulo previamente capturado
-    articulos[codigo]['cantidad'] = int(input('Ingrese la cantidad: '))   # Captura de la cantidad
-    print('\n')
-    print('-----------------------------------------------------')
     
-    if articulos[codigo]['cantidad'] < 0:            # Validacion de la cantidad ingresada, no puede ser negativa
-        print('La cantidad no puede ser negativa')
-        return
+    codigo = input('Ingrese el codigo del articulo: ')  # Captura del codigo del articulo previamente capturado
+    while codigo not in articulos:                 # Ciclo para validar que el codigo exista en el diccionario
+        print('-----------------------------------------------------')
+        print('El articulo no existe')
+        print('-----------------------------------------------------')
+        codigo = input('Ingrese el codigo del articulo: ')
+    articulos[codigo]['cantidad'] = int(input('Ingrese la cantidad: '))  # Captura de la cantidad
+    print('-----------------------------------------------------')
+    print('\n')
 
     total_sin_iva = 0                      # Inicializacion de variables total sin iva
     tota_general = 0                       # Inicializacion de variables total general con iva
@@ -48,8 +55,6 @@ def facturar():                    # Funcion para facturar
     for articulo in articulos:        # Ciclo para calcular el total general de todos los articulos
         tota_general += articulos[articulo]['subtotal con IVA']
     articulos[codigo]['total'] = tota_general
-    
-
 
 def mostrar_factura():               # Funcion para mostrar la factura
     """Mostrar factura"""
@@ -66,8 +71,6 @@ def mostrar_factura():               # Funcion para mostrar la factura
     print('Total con IVA: $%d' %articulos[articulo]['total'])
     print('-----------------------------------------------------')
     print('\n')
-        
- 
 
 def run():                              # Funcion principal
     """Menu de opcones:
