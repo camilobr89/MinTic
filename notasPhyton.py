@@ -20,7 +20,22 @@ object, arrery, string, number, boolean, null
 tipos de objetos en python:
 list, tuple, dict, set, str, int, float, bool, None
 
+funciones incluidas son las siguientes:
+len, pop, append, remove, insert, count, sort, reverse, min, max, sum, range, enumerate, sorted, reversed, map, filter, zip, reduce
+
+funciones definidas por el usuarion son las siguientes:
+abs, all, any, bin, bool, chr, classmethod, compile, complex, dir, divmod, enumerate, eval, exec, filter, format, frozenset, getattr, globals, hasattr, hash, help, hex, id, input, isinstance, issubclass, iter, len, list, locals, map, max, min, next, object, oct, open, ord, pow, print, property, range, repr, reversed, round, set, slice, sorted, staticmethod, str, sum, super, tuple, type, vars, zip
+
+las funciones sin argumentos son las que no tienen un argumento, las funciones con argumentos son las que tienen un argumento.
+
 """
 
-
+k = 5 
+def func():
+    global k
+    k = k+7
+    print(k)
+    k = 10
+func()
+print(k)
 
